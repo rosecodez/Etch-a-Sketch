@@ -1,5 +1,4 @@
 // Main container
-
 function createDiv() {
   const mainDiv = document.createElement("div");
   document.body.appendChild(mainDiv);
@@ -15,22 +14,10 @@ function createChild() {
 }
 createChild();
 
-// Grandchild containers
-function createGranchild() {
-  const grandchild = document.createElement("div");
-  childDiv.appendChild(grandchild);
-  grandchild.setAttribute("id", "grandchild");
-}
-createGranchild()
-
-
-
 //Loop 16 times
-
 function createLoop() {
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 255; i++) {
     createChild();
-    
   }
 }
 createLoop();
