@@ -4,16 +4,17 @@
     background-color: #1a759f;
 }
 #mainDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+#mainGrid {
     border-style: solid;
     color: #d9ed92;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 615px;
-    margin-right: 560px;
-    margin-top: 135px;
+    width: 736px;
 }
-
 
 #childDiv {
     border-style: ridge;

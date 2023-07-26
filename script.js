@@ -1,15 +1,22 @@
-// Main container
+// Grid container
 function createDiv() {
   const mainDiv = document.createElement("div");
   document.body.appendChild(mainDiv);
   mainDiv.setAttribute("id","mainDiv");
 }
 createDiv();
+// Main container
+function createGrid() {
+  const mainGrid = document.createElement("div");
+  mainDiv.appendChild(mainGrid);
+  mainGrid.setAttribute("id","mainGrid");
+}
+createGrid();
 
 // Child containers
 function createChild() {
   const childDiv = document.createElement("div");
-  mainDiv.appendChild(childDiv);
+  mainGrid.appendChild(childDiv);
   childDiv.setAttribute("id", "childDiv");
 }
 createChild();
