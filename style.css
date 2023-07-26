@@ -2,18 +2,30 @@
     margin: 0;
     padding: 0;
     background-color: #1a759f;
-    color: #d9ed92;
+
 }
 #mainDiv {
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding: 150px;
 }
-#child {
-background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+#mainDiv > div {
+    background-color: aquamarine;
+    color: #d9ed92;
+    font-size: 4vw;
+    padding: 8px;
+}
+#childDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    text-align: center;
+    border-style: solid;
+    grid-gap: 5px;
+}
+#mainDiv >div {
+    background-color: #d9ed92;
+    padding: 8px;
 }
