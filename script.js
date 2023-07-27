@@ -48,5 +48,8 @@ function createLoop() {
 createLoop();
 
 function createButton() {
-
+  const button = document.createElement("button");
+  mainDiv.appendChild(button);
+  button.setAttribute("id","button");
 }
+createButton();
