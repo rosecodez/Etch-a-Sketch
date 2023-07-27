@@ -46,10 +46,26 @@ function createLoop() {
   }
 }
 createLoop();
-
+// Function to create button
 function createButton() {
   const button = document.createElement("button");
   mainDiv.appendChild(button);
   button.setAttribute("id","button");
+  button.textContent = "Change grid size";
+
+  // event to change button color
+  button.addEventListener(
+    "mouseenter",
+    (event) => {
+      // initial color
+      event.target.style.background = "#d9ed92";
+
+      // reset color delay
+      setTimeout(() => {
+        event.target.style.background = "";
+      }, 500);
+    },
+    false,
+  );
 }
 createButton();
