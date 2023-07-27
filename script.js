@@ -20,7 +20,7 @@ function createChild() {
   mainGrid.appendChild(childDiv);
   childDiv.setAttribute("id", "childDiv");
 
-  // Events for hovering over the squares
+  // Event for hovering over the squares
   // This will leave a 'trail' after the cursor passes over the squares
 
   //Event to change color when the cursor enters a square
@@ -37,22 +37,6 @@ function createChild() {
     },
     false,
   );
-
-//Event to change square color when the cursor moves over different squares
-childDiv.addEventListener(
-  "mouseover",
-  (event) => {
-    // initial color
-    event.target.style.background = "red";
-
-    // reset color delay
-    setTimeout(() => {
-      event.target.style.background = "";
-    }, 500);
-  },
-  false,
-);
-
 }
 
 //Function to loop 256(16x16) times the square
