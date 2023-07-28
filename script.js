@@ -1,3 +1,4 @@
+// All the divs are created through DOM
 // Main container
 function createDiv() {
   const mainDiv = document.createElement("div");
@@ -21,9 +22,6 @@ function createChild() {
   childDiv.setAttribute("id", "childDiv");
 
   // Event for hovering over the squares
-  // This will leave a 'trail' after the cursor passes over the squares
-
-  //Event to change color when the cursor enters a square
   childDiv.addEventListener(
     "mouseenter",
     (event) => {
@@ -46,8 +44,10 @@ function createLoop() {
   }
 }
 createLoop();
+
 // Function to create button
 function createButton() {
+  // create button through DOM
   const button = document.createElement("button");
   mainDiv.appendChild(button);
   button.setAttribute("id","button");
@@ -67,5 +67,23 @@ function createButton() {
     },
     false,
   );
+
+  // event onclick to get user's value to change grid through prompt
+  button.addEventListener("click", (event) => {
+    // prompt
+    alert("Value should be between 0 - 100");
+    userInput = prompt("Please insert desired grid size");
+  });
+  return userInput;
+  
 }
 createButton();
+
+function resetGrid(userInput) {
+
+}
+if (userInput > 100)  
+    alert("Value too high, please reinsert");
+else (userInput < 100) 
+    generateGrid();
+  
