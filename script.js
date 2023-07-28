@@ -25,13 +25,7 @@ function createChild() {
   childDiv.addEventListener(
     "mouseenter",
     (event) => {
-      // initial color
       event.target.style.background = "black";
-
-      // reset color delay
-      setTimeout(() => {
-        event.target.style.background = "";
-      }, 500);
     },
     false,
   );
@@ -59,31 +53,24 @@ function createButton() {
     (event) => {
       // initial color
       event.target.style.background = "#d9ed92";
-
-      // reset color delay
-      setTimeout(() => {
-        event.target.style.background = "";
-      }, 500);
     },
-    false,
   );
 
   // event onclick to get user's value to change grid through prompt
   button.addEventListener("click", (event) => {
     // prompt
-    alert("Value should be between 0 - 100");
-    userInput = prompt("Please insert desired grid size");
+    userInput = prompt("Please insert desired grid size between 1-100");
   });
-  return userInput;
-  
+  return userInput = resize;
 }
 createButton();
+console.log(resize);
 
 function resetGrid(userInput) {
-
-}
-if (userInput > 100)  
+  if (userInput > 100)  
     alert("Value too high, please reinsert");
-else (userInput < 100) 
-    generateGrid();
+  else (userInput < 100) 
+  
+}
+
   

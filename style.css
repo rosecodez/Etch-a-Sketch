@@ -15,10 +15,11 @@
     color: #d9ed92;
     display: flex;
     flex-wrap: wrap;
-    width: 736px;
+    width: 650px;
 }
 
 #childDiv {
+
     text-align: center;
     background-color: #d9ed92;
     padding: 20px;
