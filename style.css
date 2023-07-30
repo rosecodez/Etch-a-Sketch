@@ -1,6 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
+
     background-color: #1a759f;
 }
 #mainDiv {
@@ -16,14 +15,14 @@
     display: flex;
     flex-wrap: wrap;
     width: 650px;
+    max-width: 650px;
 }
-
 #childDiv {
-
     text-align: center;
     background-color: #d9ed92;
     padding: 20px;
 }
+
 #button {
     background-color: black;
     border: solid;

@@ -20,7 +20,6 @@ function createChild() {
   const childDiv = document.createElement("div");
   mainGrid.appendChild(childDiv);
   childDiv.setAttribute("id", "childDiv");
-
   // Event for hovering over the squares
   childDiv.addEventListener(
     "mouseenter",
@@ -31,15 +30,14 @@ function createChild() {
   );
 }
 
-//Function to loop 256(16x16) times the square
+//Function to loop the squares
 function createLoop() {
   for (let i = 0; i < 256; i++) {
     createChild();
   }
 }
 createLoop();
-
-// Function to create button
+// Function to create button, change its color and get user value when button is clicked
 function createButton() {
   // create button through DOM
   const button = document.createElement("button");
@@ -51,26 +49,25 @@ function createButton() {
   button.addEventListener(
     "mouseenter",
     (event) => {
-      // initial color
       event.target.style.background = "#d9ed92";
     },
   );
 
-  // event onclick to get user's value to change grid through prompt
+  // event to get user's value through prompt
   button.addEventListener("click", (event) => {
-    // prompt
-    userInput = prompt("Please insert desired grid size between 1-100");
+    userInput = prompt("Please insert desired size, between 1-100");
+    if (userInput > 100) {
+      alert("Value too high, please retry")
+    } else {
+      button.onclick = changeSize();
+    }
+    
   });
-  return userInput = resize;
 }
 createButton();
-console.log(resize);
 
-function resetGrid(userInput) {
-  if (userInput > 100)  
-    alert("Value too high, please reinsert");
-  else (userInput < 100) 
-  
+let newChildren = "";
+// Function to clear current grid, recall the createLoop and set the new cell sizes
+function changeSize() {
+  console.log(userInput);
 }
-
-  
