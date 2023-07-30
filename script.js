@@ -43,7 +43,7 @@ function createButton() {
   mainDiv.appendChild(button);
   button.setAttribute("id","button");
   button.textContent = "Change grid size";
-  
+
   // create button for clearing grid
   const clearBtn = document.createElement("button");
   mainDiv.appendChild(clearBtn);
@@ -55,9 +55,7 @@ function createButton() {
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
-    } else {
       button.onclick = changeSize();
-      console.log(userInput);
     }
   });
 }
@@ -66,7 +64,7 @@ createButton();
 //Function to clear current grid, recall the createLoop and set the new cell sizes
 function changeSize() {
   
-// event to clear grid on click
+  // event to clear grid on click
   clearBtn.onclick = function() {
     (event) => {
       event.style.target.background = "#d9ed92";
