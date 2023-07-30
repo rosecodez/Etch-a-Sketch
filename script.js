@@ -20,13 +20,12 @@ function createChild() {
   const childDiv = document.createElement("div");
   mainGrid.appendChild(childDiv);
   childDiv.setAttribute("id", "childDiv");
-  // Event for hovering over the squares
+  // Event for changing colors while hovering over the squares
   childDiv.addEventListener(
     "mouseenter",
     (event) => {
       event.target.style.background = "black";
-    },
-    false,
+    }
   );
 }
 
@@ -37,22 +36,20 @@ function createLoop() {
   }
 }
 createLoop();
-// Function to create button, change its color and get user value when button is clicked
+// Function to create buttons, change its color and get user value when button is clicked
 function createButton() {
-  // create button through DOM
+  // create button for changing grid size
   const button = document.createElement("button");
   mainDiv.appendChild(button);
   button.setAttribute("id","button");
   button.textContent = "Change grid size";
-
-  // event to change button color
-  button.addEventListener(
-    "mouseenter",
-    (event) => {
-      event.target.style.background = "#d9ed92";
-    },
-  );
-
+  
+  // create button for clearing grid
+  const clearBtn = document.createElement("button");
+  mainDiv.appendChild(clearBtn);
+  clearBtn.setAttribute("id","button");
+  clearBtn.textContent = "Clear";
+  
   // event to get user's value through prompt
   button.addEventListener("click", (event) => {
     userInput = prompt("Please insert desired size, between 1-100");
@@ -60,14 +57,19 @@ function createButton() {
       alert("Value too high, please retry")
     } else {
       button.onclick = changeSize();
+      console.log(userInput);
     }
-    
   });
 }
 createButton();
 
-let newChildren = "";
-// Function to clear current grid, recall the createLoop and set the new cell sizes
+//Function to clear current grid, recall the createLoop and set the new cell sizes
 function changeSize() {
-  console.log(userInput);
+  
+// event to clear grid on click
+  clearBtn.onclick = function() {
+    (event) => {
+      event.style.target.background = "#d9ed92";
+    }
+  }
 }

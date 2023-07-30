@@ -23,7 +23,7 @@
     padding: 20px;
 }
 
-#button {
+#button, #clearBtn {
     background-color: black;
     border: solid;
     color: white;
