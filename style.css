@@ -14,8 +14,11 @@
     color: #d9ed92;
     display: flex;
     flex-wrap: wrap;
-    width: 650px;
-    max-width: 650px;
+    width: 640px;
+    max-width: 640px;
+    height: 640px;
+    max-height: 640px;
+    background-color: #d9ed92;
 }
 #childDiv {
     text-align: center;
