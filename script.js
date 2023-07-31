@@ -29,9 +29,10 @@ function createChild() {
   );
 }
 
+const initial = 16;
 //Function to loop the squares
 function createLoop() {
-  for (let i = 0; i < 256; i++) {
+  for (i = 0; i < initial * initial; i++) {
     createChild();
   }
 }
@@ -50,12 +51,15 @@ function createButton() {
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
+    } else {
+      clearGrid();
     }
+    return userInput;
   });
 }
 createButton();
 
-//Function to create eraser and pointover event
+//Function to create eraser and event
 function createEraser() {
   // create button for eraser
   const eraserBtn = document.createElement("button");
@@ -63,8 +67,10 @@ function createEraser() {
   eraserBtn.setAttribute("id","eraserBtn");
   eraserBtn.textContent = "Eraser";
 
-  // event to clear grid on click
+  // event for eraser
+  eraserBtn.addEventListener("click", () => {
 
+  })
 }
 createEraser()
 
@@ -85,3 +91,17 @@ function clearColor() {
 }
 clearColor();
 
+// Function to clear grid
+function clearGrid() {
+  while(mainGrid.firstChild) {
+    mainGrid.removeChild(mainGrid.firstChild);
+  }
+}
+
+// Function to change grid size
+function resizeGrid(userInput) {
+  for (i = 0; i < userInput * userInput; i++) {
+    createChild();
+  }
+}
+resizeGrid();
