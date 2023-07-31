@@ -36,38 +36,52 @@ function createLoop() {
   }
 }
 createLoop();
+
 // Function to create buttons, change its color and get user value when button is clicked
 function createButton() {
   // create button for changing grid size
   const button = document.createElement("button");
   mainDiv.appendChild(button);
   button.setAttribute("id","button");
-  button.textContent = "Change grid size";
+  button.textContent = "Change grid size"; 
 
-  // create button for clearing grid
-  const clearBtn = document.createElement("button");
-  mainDiv.appendChild(clearBtn);
-  clearBtn.setAttribute("id","button");
-  clearBtn.textContent = "Clear";
-  
   // event to get user's value through prompt
   button.addEventListener("click", (event) => {
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
-      button.onclick = changeSize();
     }
   });
 }
 createButton();
 
-//Function to clear current grid, recall the createLoop and set the new cell sizes
-function changeSize() {
-  
+//Function to create eraser and pointover event
+function createEraser() {
+  // create button for eraser
+  const eraserBtn = document.createElement("button");
+  mainDiv.appendChild(eraserBtn);
+  eraserBtn.setAttribute("id","eraserBtn");
+  eraserBtn.textContent = "Eraser";
+
   // event to clear grid on click
-  clearBtn.onclick = function() {
-    (event) => {
-      event.style.target.background = "#d9ed92";
-    }
-  }
+
 }
+createEraser()
+
+//Function to clear color
+function clearColor() {
+  // create button for clearing grid
+  const clearBtn = document.createElement("button");
+  mainDiv.appendChild(clearBtn);
+  clearBtn.setAttribute("id","clearBtn");
+  clearBtn.textContent = "Clear";
+
+  // event to clear grid on click
+  clearBtn.addEventListener("click", () => {
+    mainGrid.childNodes.forEach((child) => {
+      child.style.backgroundColor = null;
+    });
+  });
+}
+clearColor();
+
