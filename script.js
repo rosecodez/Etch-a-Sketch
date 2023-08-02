@@ -21,8 +21,6 @@ function createChild() {
   const childDiv = document.createElement("div");
   mainGrid.appendChild(childDiv);
   childDiv.setAttribute("class", "childDiv");
-  childDiv.textContent = j;
-  j++;
   // Event for changing colors while hovering over the squares
   childDiv.addEventListener(
     "mouseenter",
