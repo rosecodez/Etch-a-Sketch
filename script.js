@@ -3,7 +3,7 @@
 function createDiv() {
   const mainDiv = document.createElement("div");
   document.body.appendChild(mainDiv);
-  mainDiv.setAttribute("id","mainDiv");
+  mainDiv.setAttribute("id", "mainDiv");
 }
 createDiv();
 
@@ -11,15 +11,18 @@ createDiv();
 function createGrid() {
   const mainGrid = document.createElement("div");
   mainDiv.appendChild(mainGrid);
-  mainGrid.setAttribute("id","mainGrid");
+  mainGrid.setAttribute("id", "mainGrid");
 }
 createGrid();
 
 // Function to create individual square and change its color while hovering
+let j = 1;
 function createChild() {
   const childDiv = document.createElement("div");
   mainGrid.appendChild(childDiv);
-  childDiv.setAttribute("id", "childDiv");
+  childDiv.setAttribute("class", "childDiv");
+  childDiv.textContent = j;
+  j++;
   // Event for changing colors while hovering over the squares
   childDiv.addEventListener(
     "mouseenter",
@@ -29,10 +32,10 @@ function createChild() {
   );
 }
 
-const initial = 16;
 //Function to loop the squares
+const size = 16;
 function createLoop() {
-  for (i = 0; i < initial * initial; i++) {
+  for (i = 0; i < size * size; i++) {
     createChild();
   }
 }
@@ -43,18 +46,19 @@ function createButton() {
   // create button for changing grid size
   const button = document.createElement("button");
   mainDiv.appendChild(button);
-  button.setAttribute("id","button");
-  button.textContent = "Change grid size"; 
+  button.setAttribute("id", "button");
+  button.textContent = "Change grid size";
 
   // event to get user's value through prompt
   button.addEventListener("click", (event) => {
+    j = 1;
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
     } else {
       clearGrid();
     }
-    return userInput;
+    resizeGrid(userInput);
   });
 }
 createButton();
@@ -64,7 +68,7 @@ function createEraser() {
   // create button for eraser
   const eraserBtn = document.createElement("button");
   mainDiv.appendChild(eraserBtn);
-  eraserBtn.setAttribute("id","eraserBtn");
+  eraserBtn.setAttribute("id", "eraserBtn");
   eraserBtn.textContent = "Eraser";
 
   // event for eraser
@@ -72,14 +76,14 @@ function createEraser() {
 
   })
 }
-createEraser()
+createEraser();
 
 //Function to clear color
 function clearColor() {
   // create button for clearing grid
   const clearBtn = document.createElement("button");
   mainDiv.appendChild(clearBtn);
-  clearBtn.setAttribute("id","clearBtn");
+  clearBtn.setAttribute("id", "clearBtn");
   clearBtn.textContent = "Clear";
 
   // event to clear grid on click
@@ -93,7 +97,7 @@ clearColor();
 
 // Function to clear grid
 function clearGrid() {
-  while(mainGrid.firstChild) {
+  while (mainGrid.firstChild) {
     mainGrid.removeChild(mainGrid.firstChild);
   }
 }
@@ -101,7 +105,17 @@ function clearGrid() {
 // Function to change grid size
 function resizeGrid(userInput) {
   for (i = 0; i < userInput * userInput; i++) {
-    createChild();
+    // createChild();
+    const childDiv = document.createElement("div");
+    mainGrid.appendChild(childDiv);
+    childDiv.setAttribute("class", "childDiv");
+
+    childDiv.style.flexBasis = `calc(100% / ${userInput})`;
+    childDiv.addEventListener(
+      "mouseenter",
+      (event) => {
+        event.target.style.background = "black";
+      }
+    );
   }
 }
-resizeGrid();
