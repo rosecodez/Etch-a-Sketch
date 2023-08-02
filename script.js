@@ -16,7 +16,6 @@ function createGrid() {
 createGrid();
 
 // Function to create individual square and change its color while hovering
-let j = 1;
 function createChild() {
   const childDiv = document.createElement("div");
   mainGrid.appendChild(childDiv);
@@ -25,12 +24,14 @@ function createChild() {
   childDiv.addEventListener(
     "mouseenter",
     (event) => {
-      event.target.style.background = "black";
+      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+      event.target.style.background = '#' + randomColor;
     }
   );
 }
 
-//Function to loop the squares
+// Function to loop the squares
+// default grid size (16x16)
 const size = 16;
 function createLoop() {
   for (i = 0; i < size * size; i++) {
@@ -70,9 +71,7 @@ function createEraser() {
   eraserBtn.textContent = "Eraser";
 
   // event for eraser
-  eraserBtn.addEventListener("click", () => {
-
-  })
+  
 }
 createEraser();
 
@@ -103,16 +102,22 @@ function clearGrid() {
 // Function to change grid size
 function resizeGrid(userInput) {
   for (i = 0; i < userInput * userInput; i++) {
-    // createChild();
+    // redeclare childDiv
+    // had difficulty to access the element already created with DOM, so this actually worked
     const childDiv = document.createElement("div");
     mainGrid.appendChild(childDiv);
     childDiv.setAttribute("class", "childDiv");
 
+    //calculate size of squares each time grid changes size
     childDiv.style.flexBasis = `calc(100% / ${userInput})`;
+
+    //redeclare event listener for changing color when hovering over
+
     childDiv.addEventListener(
       "mouseenter",
       (event) => {
-        event.target.style.background = "black";
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        event.target.style.background = '#' + randomColor;
       }
     );
   }
