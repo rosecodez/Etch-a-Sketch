@@ -1,3 +1,5 @@
+
+
 // All the divs are created through DOM
 // Main container
 function createDiv() {
@@ -6,6 +8,14 @@ function createDiv() {
   mainDiv.setAttribute("id", "mainDiv");
 }
 createDiv();
+
+// Function to create footer
+function createFooter() {
+  const footer = document.createElement("footer");
+  mainDiv.appendChild(footer);
+  footer.textContent = "RoseCodez @ The Odin Project 2023";
+}
+createFooter();
 
 // Grid container
 function createGrid() {
@@ -41,15 +51,15 @@ function createLoop() {
 createLoop();
 
 // Function to create buttons, change its color and get user value when button is clicked
-function createButton() {
+function changeGridBtn() {
   // create button for changing grid size
-  const button = document.createElement("button");
-  mainDiv.appendChild(button);
-  button.setAttribute("id", "button");
-  button.textContent = "Change grid size";
+  const changeGridBtn = document.createElement("button");
+  mainDiv.appendChild(changeGridBtn);
+  changeGridBtn.setAttribute("id", "changeGridBtn");
+  changeGridBtn.textContent = "Change grid size";
 
   // event to get user's value through prompt
-  button.addEventListener("click", (event) => {
+  changeGridBtn.addEventListener("click", (event) => {
     j = 1;
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
@@ -60,7 +70,7 @@ function createButton() {
     resizeGrid(userInput);
   });
 }
-createButton();
+changeGridBtn()
 
 //Function to create eraser and event
 function createEraser() {
@@ -122,3 +132,10 @@ function resizeGrid(userInput) {
     );
   }
 }
+
+function createHeader() {
+  const header = document.createElement("header");
+  mainDiv.appendChild(header);
+  header.textContent = "Etch a Sketch";
+}
+createHeader();
