@@ -15,13 +15,12 @@ body {
 #mainDiv {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 30px;
   flex-direction: column-reverse;
   align-items: center;
 }
   
 #mainGrid {
-  color: #d9ed92;
   display: flex;
   flex-wrap: wrap;
   width: 640px;
@@ -40,14 +39,15 @@ body {
 #changeGridBtn,
 #clearBtn,
 #eraserBtn {
+  display: flex;
   background-color: #080202;
-  border: solid;
   color: white;
-  padding: 15px 32px;
+  padding: 8px 5px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
-  width: 132px;
+  width: 141px;
+  justify-content: center;
   font-family: myFont;
 }
 

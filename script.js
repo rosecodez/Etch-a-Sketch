@@ -60,7 +60,6 @@ function changeGridBtn() {
 
   // event to get user's value through prompt
   changeGridBtn.addEventListener("click", (event) => {
-    j = 1;
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
@@ -72,18 +71,6 @@ function changeGridBtn() {
 }
 changeGridBtn()
 
-//Function to create eraser and event
-function createEraser() {
-  // create button for eraser
-  const eraserBtn = document.createElement("button");
-  mainDiv.appendChild(eraserBtn);
-  eraserBtn.setAttribute("id", "eraserBtn");
-  eraserBtn.textContent = "Eraser";
-
-  // event for eraser
-  
-}
-createEraser();
 
 //Function to clear color
 function clearColor() {
@@ -133,6 +120,7 @@ function resizeGrid(userInput) {
   }
 }
 
+// Function to create header
 function createHeader() {
   const header = document.createElement("header");
   mainDiv.appendChild(header);
