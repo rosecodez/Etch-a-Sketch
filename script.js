@@ -34,8 +34,14 @@ function createChild() {
   childDiv.addEventListener(
     "mouseenter",
     (event) => {
-      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+      let randomColor = Math.floor(Math.random()*16777215).toString(16);
       event.target.style.background = '#' + randomColor;
+      
+      if(parseFloat(event.target.style.opacity)) {
+        event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
+      } else {
+        event.target.style.opacity = 0.1;
+      }
     }
   );
 }
@@ -60,6 +66,7 @@ function changeGridBtn() {
 
   // event to get user's value through prompt
   changeGridBtn.addEventListener("click", (event) => {
+    j = 1;
     userInput = prompt("Please insert desired size, between 1-100");
     if (userInput > 100) {
       alert("Value too high, please retry")
@@ -70,7 +77,6 @@ function changeGridBtn() {
   });
 }
 changeGridBtn()
-
 
 //Function to clear color
 function clearColor() {
@@ -115,6 +121,11 @@ function resizeGrid(userInput) {
       (event) => {
         var randomColor = Math.floor(Math.random()*16777215).toString(16);
         event.target.style.background = '#' + randomColor;
+        if(parseFloat(event.target.style.opacity)) {
+          event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
+        } else {
+          event.target.style.opacity = 0.1;
+        }
       }
     );
   }
