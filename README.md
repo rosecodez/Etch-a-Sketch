@@ -17,9 +17,10 @@ Hardest part was understanding how the code behaves when I wanted to resize the 
 `Future ideas to implement:`
 Transform the behavior of a square when interacting with the mouse by introducing a series of modifications.
 
-1.Complete the eraser functionabilty.
+
 ✔️ Rather than a simple color change from a color to another, each interaction should randomize the square’s RGB value entirely.
-3.Additionally, implement a progressive darkening effect where each interaction adds 10% more black or color to the square. The objective is to achieve a completely black square only after ten interactions.
+
+Additionally, implement a progressive darkening effect where each interaction adds 10% more black or color to the square. The objective is to achieve a completely black square only after ten interactions.
 
 
 ---
