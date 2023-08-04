@@ -26,4 +26,5 @@ Hardest part was understanding how the code behaves when I wanted to resize the 
 `Credits: `
 Mangoes Slash Font - by AM Designs (https://www.fontspace.com/mangoes-slash-font-f82838)
 
-![Alt text](Etch-A-Sketch.png)
+
+![Alt text](<etch a sketch new.png>)
